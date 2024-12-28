@@ -58,17 +58,18 @@ input:hover {
     width: 80px;
   }
   .main {
-    background-image: url(./assets/2151058920.jpg);
+    background-image: url(./assets/9081.jpg);
     background-size: cover;
     font-size: 21px;
     font-weight: bold;
+    padding: 2em;
   }
   .main > h2 {
     color: rgb(255, 255, 255);
   }
   p,
   label {
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
   }
 
   input {
