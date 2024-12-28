@@ -60,7 +60,7 @@ input:hover {
   .main {
     background-image: url(./assets/2151058920.jpg);
     background-size: cover;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
   }
   .main > h2 {

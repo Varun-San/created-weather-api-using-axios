@@ -116,7 +116,7 @@ const App = () => {
       <div className="main">
         <h2>Welcome to the Weather Man</h2>
         <p>
-          Current Date And Time = {dateTime.date} {dateTime.time}
+          Current Date And Time {dateTime.date} {dateTime.time}
         </p>
         <label htmlFor="city">Enter the City Name</label>
         <br />
