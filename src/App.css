@@ -63,6 +63,7 @@ input:hover {
     font-size: 21px;
     font-weight: bold;
     padding: 2em;
+    height: 87.6vh;
   }
   .main > h2 {
     color: rgb(255, 255, 255);
