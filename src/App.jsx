@@ -96,6 +96,29 @@ const App = () => {
       setTemp(null);
       setweather_image(null);
       setwcond(null);
+
+      //========================
+
+      // Axios Error Handling
+      if (error.response) {
+        // Server responded with a status code other than 2xx
+        const { status } = error.response;
+        if (status === 404) {
+          setMessage("City not found. Please enter a valid city.");
+        } else if (status === 401) {
+          setMessage("Invalid API key. Please check your API key.");
+        } else {
+          setMessage("Something went wrong. Please try again later.");
+        }
+      } else if (error.request) {
+        // No response received from server
+        setMessage(
+          "Unable to connect to the server. Please check your network."
+        );
+      } else {
+        // Some other error occurred
+        setMessage("An unexpected error occurred.");
+      }
     }
   };
 
