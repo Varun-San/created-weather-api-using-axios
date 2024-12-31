@@ -9,9 +9,14 @@ import Fog from "./assets/weathergif/foggy.gif";
 import Thunderstorm from "./assets/weathergif/storm.gif";
 import Mist from "./assets/weathergif/cloudy.gif";
 import Clear from "./assets/weathergif/sun.gif";
+// import { DownOutlined } from "@ant-design/icons";
+// import { Dropdown, Space } from "antd";
+// import { AntDesignOutlined } from "@ant-design/icons";
+// import { Button, ConfigProvider } from "antd";
+// import { PoweroffOutlined } from "@ant-design/icons";
+// import { Button, Flex } from "antd";
 
 const App = () => {
-  let set;
   const [details, setdetails] = useState({
     cityname: "",
   });
@@ -46,6 +51,43 @@ const App = () => {
     // Cleanup interval on component unmount
     return () => clearInterval(interval);
   }, []);
+
+  //! BUTTON STYLES
+  // const items = [{}];
+  // const [loadings, setLoadings] = useState([]);
+  // const enterLoading = (index) => {
+  //   setLoadings((state) => {
+  //     const newLoadings = [...state];
+  //     newLoadings[index] = true;
+  //     return newLoadings;
+  //   });
+  //   setTimeout(() => {
+  //     apicall();
+  //     setLoadings((state) => {
+  //       const newLoadings = [...state];
+  //       newLoadings[index] = false;
+  //       return newLoadings;
+  //     });
+  //   }, 1000);
+  // };
+
+  //! DIFFERENT BUTTON STYLES
+  // const [loadings, setLoadings] = useState([]);
+  // const enterLoading = (index) => {
+  //   setLoadings((prevLoadings) => {
+  //     const newLoadings = [...prevLoadings];
+  //     newLoadings[index] = true;
+  //     return newLoadings;
+  //   });
+  //   setTimeout(() => {
+  //     setLoadings((prevLoadings) => {
+  //       const newLoadings = [...prevLoadings];
+  //       newLoadings[index] = false;
+  //       apicall();
+  //       return newLoadings;
+  //     });
+  //   }, 1000);
+  // };
 
   //  AXIOS METHOD
   const apicall = async () => {
@@ -86,6 +128,8 @@ const App = () => {
           setweather_image(Mist);
         } else if (weathercondition == "Clear") {
           setweather_image(Clear);
+        } else if (weathercondition == "Smoke") {
+          setweather_image(Fog);
         }
       });
     } catch (error) {
@@ -154,6 +198,33 @@ const App = () => {
           <a>
             <button onClick={apicall}>Submit</button>
           </a>
+          {/* <Space direction="vertical">
+            <Dropdown.Button
+              type="primary"
+              loading={loadings[0]}
+              menu={{
+                items,
+              }}
+              onClick={() => {
+                enterLoading(0);
+              }}
+            >
+              Submit
+            </Dropdown.Button>
+          </Space> */}
+          {/* <Button
+            style={{
+              backgroundColor: "rgb(245, 222, 179)",
+              color: "black",
+              border: "1px solid black",
+              borderRadius: "20px",
+            }}
+            type="primary"
+            loading={loadings[0]}
+            onClick={() => enterLoading(0)}
+          >
+            Submit
+          </Button> */}
         </div>
         <p>{message}</p>
         <img src={weather_image} />
